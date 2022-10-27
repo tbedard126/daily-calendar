@@ -2,9 +2,10 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: gray;
 }
 
-textarea{
+textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -15,25 +16,28 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: rgb(54, 25, 54);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
 
-.description{
+.description {
   white-space: pre-wrap;
 }
 
-.time-block{
-  text-align: center;
+.time-block {
+  text-align: left;
+  padding-bottom: 50px;
   border-radius: 15px;
+  font-size: 24px;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
+  ;
 }
 
 .hour {
