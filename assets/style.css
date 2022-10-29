@@ -2,11 +2,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  background-color: gray;
+  background-color: rgb(0, 0, 0);
   padding-left: 0%;
 }
 
-textarea {
+.textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -27,21 +27,11 @@ textarea {
   white-space: pre-wrap;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  display: inline-block;
-  overflow: hidden;
-}
 
 .time-block {
-  padding-top: 50px;
-  padding-bottom: 50px;
   border-radius: 15px;
-  font-size: 36px;
   border: solid black;
-
+  text-align: center;
 }
 
 .row {
@@ -77,8 +67,6 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  font-size: 36px;
-  text-align: right;
 }
 
 .saveBtn i:hover {
