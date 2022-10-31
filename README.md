@@ -8,4 +8,4 @@ When you add an item to the text area and click the save button on the right, th
 here is a link to the deployed page so you can try it for yourself!!
 https://tbedard126.github.io/daily-calendar/
 
-![a screenshot of my application](./assets/images/daily calendar.png)
+![](./assets/images/daily-calendar.png)
