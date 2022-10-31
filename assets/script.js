@@ -1,7 +1,6 @@
 $(function () {
     // variables
     const today = moment();
-    const saveButton = $('.saveBtn');
     const $container = $('.container');
     const currentHour = today.hour();
 
@@ -24,7 +23,7 @@ $(function () {
             const $div = $('<div>').addClass('row time-block');
             const $div1 = $('<div>').addClass('hour col-1');
             const $textArea = $('<textarea>').addClass(
-                `description col-10  ${checkCurrentTime(currentHour, obj.military)}`
+                `description col-10  ${checkCurrentTime(currentHour, obj.military)} ${obj.military}`
             );
             const $button = $('<button>').addClass('saveBtn col-1 btn').attr('time', obj.military);
             const $i = $('<i>').addClass('fas fa-save');
@@ -48,20 +47,26 @@ $(function () {
     // Create divs for calendar
     createCalendar();
 
-    // function for saving the text in the timeblocks
-    const saveData = () => {
-        // window.localStorage.setItem('time', obj.military)
-        console.log($('button.saveBtn').attr('time'))
+
+
+
+    const textareaSave = () => {
+        $(`textarea.${militaryTimeClicked}`).val()
+        localStorage.setItem(militaryTimeClicked, textareaSave)
     }
 
+    // makes the save buttons clickable and saves the contents of the text area to local storage
+    $('body').on('click', 'button.saveBtn', function () {
+        const militaryTimeClicked = $(this).attr('time');
+        const textAreaValue = $(`textarea.${militaryTimeClicked}`).val();
+        localStorage.getItem(militaryTimeClicked);
+        localStorage.setItem(militaryTimeClicked, textAreaValue);
 
-    // makes the save buttons clickable
-    $('body').on('click', 'button.saveBtn', saveData)
+
+    });
 
     // sets the day of the month/year to the page
     $('#currentDay').text(today.format('MMM Do, YYYY'));
 
 
-
-});
-
+})
