@@ -23,8 +23,8 @@ $(function () {
             const $div = $('<div>').addClass('row time-block');
             const $div1 = $('<div>').addClass('hour col-1');
             const $textArea = $('<textarea>').addClass(
-                `description col-10  ${checkCurrentTime(currentHour, obj.military)} ${obj.military}`
-            );
+                `description col-10  ${checkCurrentTime(currentHour, obj.military)} ${obj.military}`).text(
+                    localStorage.getItem(obj.military) != null ? localStorage.getItem(obj.military) : '');
             const $button = $('<button>').addClass('saveBtn col-1 btn').attr('time', obj.military);
             const $i = $('<i>').addClass('fas fa-save');
 
@@ -48,18 +48,10 @@ $(function () {
     createCalendar();
 
 
-
-
-    const textareaSave = () => {
-        $(`textarea.${militaryTimeClicked}`).val()
-        localStorage.setItem(militaryTimeClicked, textareaSave)
-    }
-
     // makes the save buttons clickable and saves the contents of the text area to local storage
     $('body').on('click', 'button.saveBtn', function () {
         const militaryTimeClicked = $(this).attr('time');
         const textAreaValue = $(`textarea.${militaryTimeClicked}`).val();
-        localStorage.getItem(militaryTimeClicked);
         localStorage.setItem(militaryTimeClicked, textAreaValue);
 
 
